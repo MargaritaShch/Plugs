@@ -9,5 +9,4 @@ class StubApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

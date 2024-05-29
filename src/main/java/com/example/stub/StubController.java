@@ -41,11 +41,11 @@ public class StubController {
         }
 
         String response = new String(Files.readAllBytes(Paths.get("src/main/resources/postAnswer.txt")));
+        Integer age = requestBody.getAge() == null ? 123 : requestBody.getAge();
         response = response.replace("{name}", requestBody.getName())
                            .replace("{surname}", requestBody.getSurname())
-                           .replace("{age}", String.valueOf(requestBody.getAge() == null ? 123 : requestBody.getAge()))
-                           .replace("{age}*2", String.valueOf((requestBody.getAge() == null ? 123 : requestBody.getAge()) * 2));
-
+                           .replace("{age}", String.valueOf(age))
+                           .replace("{age*2}", String.valueOf(age * 2));
         return ResponseEntity.ok(response);
     }
 }
