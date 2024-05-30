@@ -45,7 +45,7 @@ public class StubController {
         response = response.replace("{name}", requestBody.getName())
                            .replace("{surname}", requestBody.getSurname())
                            .replace("{age}", String.valueOf(age))
-                           .replace("{age*2}", String.valueOf(age * 2));
+                           .replace("{age}*2", String.valueOf(age * 2));
         return ResponseEntity.ok(response);
     }
 }
